@@ -1,0 +1,20 @@
+def most_frequent(data: list) -> str:
+    arr = {}
+    for i in range(len(data)):
+        count = 0
+        for j in range(len(data)):
+            if data[i] == data[j]:
+                count += 1
+        arr[data[i]] = count
+    return max(arr, key=arr.get)
+
+
+if __name__ == "__main__":
+    # These "asserts" using only for self-checking and not necessary for auto-testing
+    print("Example:")
+    print(most_frequent(["a", "b", "c", "a", "b", "a"]))
+
+    assert most_frequent(["a", "b", "c", "a", "b", "a"]) == "a"
+
+    assert most_frequent(["a", "a", "bi", "bi", "bi"]) == "bi"
+    print("Done")

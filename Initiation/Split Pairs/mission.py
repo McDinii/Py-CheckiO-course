@@ -1,0 +1,25 @@
+def split_pairs(a):
+    ans = []
+    buff = ""
+    for _ in range(len(a)):
+        buff += a[_]
+        if len(buff) == 2:
+            ans.append(buff)
+            buff = ""
+        elif _ == len(a)-1:
+            ans.append(buff+"_")
+            break
+    return ans
+
+
+if __name__ == '__main__':
+    print("Example:")
+    print(list(split_pairs('aa')))
+
+    # These "asserts" are used for self-checking and not for an auto-testing
+    assert list(split_pairs('abcd')) == ['ab', 'cd']
+    assert list(split_pairs('abc')) == ['ab', 'c_']
+    assert list(split_pairs('abcdf')) == ['ab', 'cd', 'f_']
+    assert list(split_pairs('a')) == ['a_']
+    assert list(split_pairs('')) == []
+    print("Coding complete? Click 'Check' to earn cool rewards!")

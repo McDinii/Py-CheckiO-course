@@ -1,0 +1,41 @@
+def sum_numbers(text: str) -> int:
+    num_str = ""
+    num = 0
+    for i in range(len(text)):  # a10 10 10b
+        if text[i].isdigit():
+            if i-1 >= 0 and i+1 < len(text):
+                if ((text[i-1].isdigit() or text[i-1].isspace())
+                        and (text[i+1].isdigit() or text[i+1].isspace())):
+                    num_str += text[i]
+            elif i-1 < 0:
+                if text[i+1].isdigit() or text[i+1].isspace():
+                    num_str += text[i]
+            elif i+1 >= len(text):
+                if text[i-1].isdigit() or text[i-1].isspace():
+                    num_str += text[i]
+        if i+1 < len(text):
+            if text[i+1].isspace() and num_str != "":
+                num += int(num_str)
+                num_str = ""
+        else:
+            if num_str != "":
+                num += int(num_str)
+                num_str = ""
+
+    return num
+
+
+if __name__ == "__main__":
+    print("Example:")
+    print(sum_numbers("my numbers is 2"))
+
+    # These "asserts" are used for self-checking and not for an auto-testing
+    assert sum_numbers("hi") == 0
+    assert sum_numbers("who is 1st here") == 0
+    assert sum_numbers("my numbers is 2") == 2
+    assert (sum_numbers("This picture is an oil on canvas "
+                        "painting by Danish artist Anna "
+                        "Petersen between 1845 and 1910 year") == 3755)
+    assert sum_numbers("5 plus 6 is") == 11
+    assert sum_numbers("") == 0
+    print("Coding complete? Click 'Check' to earn cool rewards!")

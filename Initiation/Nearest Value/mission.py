@@ -1,0 +1,50 @@
+def nearest_value(values: set, one: int) -> int:
+    if one in values:
+        return one
+    else:
+        values.add(one)
+        values_l = list(values)
+        values_l.sort()
+        one_i = values_l.index(one)
+        if one_i - 1 > -1:
+            previous = values_l[one_i-1]
+            check_p = abs(one - previous)
+        else:
+            check_p = 0
+            previous = ""
+        if one_i + 1 < len(values_l):
+            next = values_l[one_i+1]
+            check_n = abs(one - next)
+
+        else:
+            next = ""
+            check_n = 0
+
+        if check_p - check_n != 0 and (check_n and check_p != 0):
+            if check_n < check_p:
+                return next
+            else:
+                return previous
+        elif check_p - check_n == 0:
+            return min(values_l[one_i - 1], values_l[one_i + 1])
+        elif check_p == 0:
+            return next
+        elif check_n == 0:
+            return previous
+
+
+if __name__ == "__main__":
+    print("Example:")
+    print(nearest_value({4, 7, 10, 11, 12, 17}, 0))
+
+    # These "asserts" are used for self-checking and not for an auto-testing
+    assert nearest_value({4, 7, 10, 11, 12, 17}, 9) == 10
+    assert nearest_value({4, 7, 10, 11, 12, 17}, 8) == 7
+    assert nearest_value({4, 8, 10, 11, 12, 17}, 9) == 8
+    assert nearest_value({4, 9, 10, 11, 12, 17}, 9) == 9
+    assert nearest_value({4, 7, 10, 11, 12, 17}, 0) == 4
+    assert nearest_value({4, 7, 10, 11, 12, 17}, 100) == 17
+    assert nearest_value({5, 10, 8, 12, 89, 100}, 7) == 8
+    assert nearest_value({5}, 5) == 5
+    assert nearest_value({5}, 7) == 5
+    print("Coding complete? Click 'Check' to earn cool rewards!")
