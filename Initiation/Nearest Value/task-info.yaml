@@ -106,4 +106,4 @@ code: |
       assert nearest_value({5}, 5) == 5
       assert nearest_value({5}, 7) == 5
       print("Coding complete? Click 'Check' to earn cool rewards!")
-seconds_from_change: 7589229
+seconds_from_change: 8364999

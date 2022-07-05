@@ -1,8 +1,18 @@
 def safe_pawns(pawns: set) -> int:
-    return 0
+    all_ = set()
+    for i in pawns:
+        all_.add(chr(ord(i[0]) - 1) + str(int(i[1]) + 1))
+        all_.add(chr(ord(i[0]) + 1) + str(int(i[1]) + 1))
+    ans = 0
+    for i in pawns:
+        if i in all_:
+            ans +=1
+    print(ans)
+    return ans
+
 
 if __name__ == '__main__':
-    #These "asserts" using only for self-checking and not necessary for auto-testing
+    # These "asserts" using only for self-checking and not necessary for auto-testing
     assert safe_pawns({"b4", "d4", "f4", "c3", "e3", "g5", "d2"}) == 6
     assert safe_pawns({"b4", "c4", "d4", "e4", "f4", "g4", "e5"}) == 1
     print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")

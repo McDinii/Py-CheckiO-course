@@ -1,6 +1,19 @@
 def frequency_sort(items):
-    # your code here
-    return None
+    di = dict()
+    for i in items:
+        di[i] = items.count(i)
+    items = []
+    def get_key(di, value):
+        for k, v in di.items():
+            if v == value:
+                return k
+    for i in sorted(di.values(), reverse=True):
+        j = i
+        while j > 0:
+            items.append(get_key(di,i))
+            j -= 1
+        del di[get_key(di,i)]
+    return items
 
 
 if __name__ == '__main__':
