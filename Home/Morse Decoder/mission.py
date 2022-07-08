@@ -39,13 +39,19 @@ MORSE = {
 
 
 def morse_decoder(code):
-    # replace this for solution
-    return code
+    code = code.split("   ")
+    ans = ""
+    for i in code:
+        check =i.split()
+        for i in check:
+            ans += MORSE.get(i)
+        ans += " "
+    return ans.capitalize()[:-1]
 
 
 if __name__ == "__main__":
     print("Example:")
-    print(morse_decoder("... --- ..."))
+    print(morse_decoder("..--- ----- .---- ---.."))
 
     # These "asserts" using only for self-checking and not necessary for auto-testing
     assert morse_decoder("... --- -- .   - . -..- -") == "Some text"

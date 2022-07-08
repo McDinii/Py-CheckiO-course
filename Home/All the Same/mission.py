@@ -2,13 +2,17 @@ from typing import List, Any
 
 
 def all_the_same(elements: List[Any]) -> bool:
-    # your code here
+    if len(elements):
+        check = elements[0]
+        for i in elements:
+            if i != check:
+                return False
     return True
 
 
 if __name__ == '__main__':
     print("Example:")
-    print(all_the_same([1, 1, 1]))
+    print(all_the_same([]))
     
     # These "asserts" are used for self-checking and not for an auto-testing
     assert all_the_same([1, 1, 1]) == True

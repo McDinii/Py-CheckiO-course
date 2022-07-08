@@ -44,13 +44,19 @@ files:
 
 
     def morse_decoder(code):
-        # replace this for solution
-        return code
+        code = code.split("   ")
+        ans = ""
+        for i in code:
+            check =i.split()
+            for i in check:
+                ans += MORSE.get(i)
+            ans += " "
+        return ans.capitalize()[:-1]
 
 
     if __name__ == "__main__":
         print("Example:")
-        print(morse_decoder("... --- ..."))
+        print(morse_decoder("..--- ----- .---- ---.."))
 
         # These "asserts" using only for self-checking and not necessary for auto-testing
         assert morse_decoder("... --- -- .   - . -..- -") == "Some text"
@@ -61,7 +67,7 @@ files:
         )
         print("Coding complete? Click 'Check' to earn cool rewards!")
   learner_created: false
-status: Unchecked
+status: Solved
 code: |
   MORSE = {
       ".-": "a",
@@ -104,13 +110,19 @@ code: |
 
 
   def morse_decoder(code):
-      # replace this for solution
-      return code
+      code = code.split("   ")
+      ans = ""
+      for i in code:
+          check =i.split()
+          for i in check:
+              ans += MORSE.get(i)
+          ans += " "
+      return ans.capitalize()[:-1]
 
 
   if __name__ == "__main__":
       print("Example:")
-      print(morse_decoder("... --- ..."))
+      print(morse_decoder("..--- ----- .---- ---.."))
 
       # These "asserts" using only for self-checking and not necessary for auto-testing
       assert morse_decoder("... --- -- .   - . -..- -") == "Some text"
@@ -120,4 +132,4 @@ code: |
           == "It was a good day"
       )
       print("Coding complete? Click 'Check' to earn cool rewards!")
-seconds_from_change: 9223372036854775807
+seconds_from_change: 1

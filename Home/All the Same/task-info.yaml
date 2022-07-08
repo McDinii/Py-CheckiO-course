@@ -3,21 +3,23 @@ files:
 - name: mission.py
   visible: true
   text: "from typing import List, Any\n\n\ndef all_the_same(elements: List[Any]) ->\
-    \ bool:\n    # your code here\n    return True\n\n\nif __name__ == '__main__':\n\
-    \    print(\"Example:\")\n    print(all_the_same([1, 1, 1]))\n    \n    # These\
-    \ \"asserts\" are used for self-checking and not for an auto-testing\n    assert\
-    \ all_the_same([1, 1, 1]) == True\n    assert all_the_same([1, 2, 1]) == False\n\
-    \    assert all_the_same(['a', 'a', 'a']) == True\n    assert all_the_same([])\
+    \ bool:\n    if len(elements):\n        check = elements[0]\n        for i in\
+    \ elements:\n            if i != check:\n                return False\n    return\
+    \ True\n\n\nif __name__ == '__main__':\n    print(\"Example:\")\n    print(all_the_same([]))\n\
+    \    \n    # These \"asserts\" are used for self-checking and not for an auto-testing\n\
+    \    assert all_the_same([1, 1, 1]) == True\n    assert all_the_same([1, 2, 1])\
+    \ == False\n    assert all_the_same(['a', 'a', 'a']) == True\n    assert all_the_same([])\
     \ == True\n    assert all_the_same([1]) == True\n    print(\"Coding complete?\
     \ Click 'Check' to earn cool rewards!\")\n"
   learner_created: false
-status: Unchecked
+status: Solved
 code: "from typing import List, Any\n\n\ndef all_the_same(elements: List[Any]) ->\
-  \ bool:\n    # your code here\n    return True\n\n\nif __name__ == '__main__':\n\
-  \    print(\"Example:\")\n    print(all_the_same([1, 1, 1]))\n    \n    # These\
-  \ \"asserts\" are used for self-checking and not for an auto-testing\n    assert\
-  \ all_the_same([1, 1, 1]) == True\n    assert all_the_same([1, 2, 1]) == False\n\
-  \    assert all_the_same(['a', 'a', 'a']) == True\n    assert all_the_same([]) ==\
-  \ True\n    assert all_the_same([1]) == True\n    print(\"Coding complete? Click\
+  \ bool:\n    if len(elements):\n        check = elements[0]\n        for i in elements:\n\
+  \            if i != check:\n                return False\n    return True\n\n\n\
+  if __name__ == '__main__':\n    print(\"Example:\")\n    print(all_the_same([]))\n\
+  \    \n    # These \"asserts\" are used for self-checking and not for an auto-testing\n\
+  \    assert all_the_same([1, 1, 1]) == True\n    assert all_the_same([1, 2, 1])\
+  \ == False\n    assert all_the_same(['a', 'a', 'a']) == True\n    assert all_the_same([])\
+  \ == True\n    assert all_the_same([1]) == True\n    print(\"Coding complete? Click\
   \ 'Check' to earn cool rewards!\")\n"
-seconds_from_change: 9223372036854775807
+seconds_from_change: 2109

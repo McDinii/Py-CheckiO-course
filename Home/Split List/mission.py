@@ -1,12 +1,9 @@
 def split_list(items: list) -> list:
-    # your code here
-    return [items]
-
+    return [items[:len(items)//2],items[len(items)//2:]] if len(items)%2==0 else [items[:len(items)//2+1],items[len(items)//2+1:]]
 
 if __name__ == '__main__':
     print("Example:")
-    print(split_list([1, 2, 3, 4, 5, 6]))
-
+    print(split_list([1, 2, 3,4]))
     # These "asserts" are used for self-checking and not for an auto-testing
     assert split_list([1, 2, 3, 4, 5, 6]) == [[1, 2, 3], [4, 5, 6]]
     assert split_list([1, 2, 3]) == [[1, 2], [3]]

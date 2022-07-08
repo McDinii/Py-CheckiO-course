@@ -1,6 +1,13 @@
 def date_time(time: str) -> str:
-    # replace this for solution
-    return time
+    mon = [' January', ' February', ' March', ' April', ' May', ' June', ' July', ' August', ' September', ' October', ' November',
+     ' December']
+    time = time.split()
+    day = int(time[0][:2])
+    month = mon[int(time[0][3:5])- 1]
+    year = time[0][6:] + ' year'
+    hours = str(int(time[1][:2])) + " hour" if time[1][:2] == "01" else str(int(time[1][:2])) + " hours"
+    minutes = str(int(time[1][3:])) + " minute" if time[1][3:] == "01" else str(int(time[1][3:])) + " minutes"
+    return str(day) + month + " "+ year +" " + hours + " "  + minutes
 
 
 if __name__ == "__main__":
