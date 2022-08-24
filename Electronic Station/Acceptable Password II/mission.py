@@ -1,20 +1,17 @@
 # Taken from mission Acceptable Password I
 
 def is_acceptable_password(password: str) -> bool:
-    if len(password) > 6:
+    flag = False
+    for i in password:
+        if i in ['0','1','2','3','4','5','6','7','8','9']:
+            flag = True
+    if len(password) > 6 and flag:
         return True
     else:
         return False
 
-if __name__ == '__main__':
-    print("Example:")
-    print(is_acceptable_password('short'))
 
-    # These "asserts" are used for self-checking and not for an auto-testing
-    assert is_acceptable_password('short') == False
-    assert is_acceptable_password('muchlonger') == True
-    assert is_acceptable_password('ashort') == False
-    print("Coding complete? Click 'Check' to earn cool rewards!")
+
 
 
 if __name__ == "__main__":

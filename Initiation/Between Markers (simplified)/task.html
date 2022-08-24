@@ -38,10 +38,10 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">between_markers('What is &gt;apple&lt;', '&gt;', '&lt;') == 'apple'
-</pre>
- 
+ <pre class="brush: python">assert between_markers(&#x27;What is &gt;apple&lt;&#x27;, &#x27;&gt;&#x27;, &#x27;&lt;&#x27;) == &#x27;apple&#x27;
+assert between_markers(&#x27;What is [apple]&#x27;, &#x27;[&#x27;, &#x27;]&#x27;) == &#x27;apple&#x27;
+assert between_markers(&#x27;What is &gt;&lt;&#x27;, &#x27;&gt;&#x27;, &#x27;&lt;&#x27;) == &#x27;&#x27;
+assert between_markers(&#x27;[an apple]&#x27;, &#x27;[&#x27;, &#x27;]&#x27;) == &#x27;an apple&#x27;</pre>
 </div>
 <p class="for_info_only">
  <strong>

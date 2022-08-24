@@ -42,13 +42,11 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">left_join(("left", "right", "left", "stop")) == "left,left,left,stop"
-left_join(("bright aright", "ok")) == "bleft aleft,ok"
-left_join(("brightness wright",)) == "bleftness wleft"
-left_join(("enough", "jokes")) == "enough,jokes"
+ <pre class="brush: python">assert left_join((&quot;left&quot;, &quot;right&quot;, &quot;left&quot;, &quot;stop&quot;)) == &quot;left,left,left,stop&quot;
+assert left_join((&quot;bright aright&quot;, &quot;ok&quot;)) == &quot;bleft aleft,ok&quot;
+assert left_join((&quot;brightness wright&quot;,)) == &quot;bleftness wleft&quot;
+assert left_join((&quot;enough&quot;, &quot;jokes&quot;)) == &quot;enough,jokes&quot;
 </pre>
- 
 </div>
 <p class="for_info_only">
  <strong>

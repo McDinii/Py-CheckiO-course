@@ -28,12 +28,10 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">correct_sentence("greetings, friends") == "Greetings, friends."
-correct_sentence("Greetings, friends") == "Greetings, friends."
-correct_sentence("Greetings, friends.") == "Greetings, friends."
-</pre>
- 
+ <pre class="brush: python">assert correct_sentence(&#x27;greetings, friends&#x27;) == &#x27;Greetings, friends.&#x27;
+assert correct_sentence(&#x27;Greetings, friends&#x27;) == &#x27;Greetings, friends.&#x27;
+assert correct_sentence(&#x27;Greetings, friends.&#x27;) == &#x27;Greetings, friends.&#x27;
+assert correct_sentence(&#x27;greetings, friends.&#x27;) == &#x27;Greetings, friends.&#x27;</pre>
 </div>
 <!-- Here you can explain how it can be used in development and what is usage of this. -->
 <p>

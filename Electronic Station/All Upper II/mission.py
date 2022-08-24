@@ -1,5 +1,6 @@
 def is_all_upper(text: str) -> bool:
-    # your code here
+    if text.isupper():
+        return True
     return False
 
 

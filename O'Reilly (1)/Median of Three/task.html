@@ -8,7 +8,12 @@ create and return a new
 
  iterable 
 
- whose first two elements are the same as in items, after which each element equals the median of the three elements in the original list ending in that position.
+ whose first two elements are the same as in items, after which each element equals the median element in the sorted list of the three elements from the original list.
+
+ Third element in sorted list is current position (position 2 and go on), first two elements are going before the third element in the original list.
+</p>
+<p style="text-align: center;">
+ <img alt="example" src="https://d17mnqrx9pmt3e.cloudfront.net/media/missions/media/418ec55981e94e858bd48150e1eaf35d/example.png" style="max-height: 365px" title="example"/>
 </p>
 <p>
  Wait...You don't know what the "median" is? Go check out the separate
@@ -41,13 +46,8 @@ Iterable of ints.
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">
-list(median_three([1, 2, 3, 4, 5, 6, 7])) == [1, 2, 2, 3, 4, 5, 6]
-list(median_three([1])) == [1]
-list(median_three([-1, 0, 1])) == [-1, 0, 0]
-</pre>
- 
+ <pre class="brush: python">assert median_three([1, 2, 3, 4, 5, 6, 7]) == [1, 2, 2, 3, 4, 5, 6]
+assert median_three([1]) == [1]</pre>
 </div>
 <p>
  <i>

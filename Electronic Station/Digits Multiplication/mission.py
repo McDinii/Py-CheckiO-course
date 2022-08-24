@@ -1,6 +1,11 @@
 def checkio(number: int) -> int:
+    print(str(number))
+    ans = 1
+    for i in str(number):
 
-    return 1
+        if i != '0':
+            ans *= int(i)
+    return ans
 
 
 if __name__ == '__main__':

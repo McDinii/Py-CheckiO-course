@@ -1,6 +1,11 @@
 from typing import Iterable
 def is_ascending(items: Iterable[int]) -> bool:
-    # your code here
+    ch = -10e9
+    for i in items:
+        if i > ch:
+            ch = i
+        else:
+            return False
     return True
 
 

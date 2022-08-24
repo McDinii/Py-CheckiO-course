@@ -25,24 +25,19 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">bigger_price(2, [
-    {"name": "bread", "price": 100},
-    {"name": "wine", "price": 138},
-    {"name": "meat", "price": 15},
-    {"name": "water", "price": 1}
-]) == [
-    {"name": "wine", "price": 138},
-    {"name": "bread", "price": 100}
-]
-
-bigger_price(1, [
-    {"name": "pen", "price": 5},
-    {"name": "whiteboard", "price": 170}
-]) == [{"name": "whiteboard", "price": 170}]
+ <pre class="brush: python">assert bigger_price(
+    2,
+    [
+        {&quot;name&quot;: &quot;bread&quot;, &quot;price&quot;: 100},
+        {&quot;name&quot;: &quot;wine&quot;, &quot;price&quot;: 138},
+        {&quot;name&quot;: &quot;meat&quot;, &quot;price&quot;: 15},
+        {&quot;name&quot;: &quot;water&quot;, &quot;price&quot;: 1},
+    ],
+) == [{&quot;name&quot;: &quot;wine&quot;, &quot;price&quot;: 138}, {&quot;name&quot;: &quot;bread&quot;, &quot;price&quot;: 100}]
+assert bigger_price(
+    1, [{&quot;name&quot;: &quot;pen&quot;, &quot;price&quot;: 5}, {&quot;name&quot;: &quot;whiteboard&quot;, &quot;price&quot;: 170}]
+) == [{&quot;name&quot;: &quot;whiteboard&quot;, &quot;price&quot;: 170}]
 </pre>
- 
 </div>
-
 <p><a href="https://py.checkio.org/mission/bigger-price/publications/category/clear">View solutions</a></p>
 <p><a href="https://py.checkio.org/en/mission/bigger-price">See the task on CheckiO</a></p>

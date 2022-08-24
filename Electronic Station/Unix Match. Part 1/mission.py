@@ -1,13 +1,32 @@
 def unix_match(filename: str, pattern: str) -> bool:
-
-    # your code here
-    return filename == pattern
+    pattern_l = pattern.split(".")
+    filename_l = filename.split(".")
+    print(pattern_l)
+    if (pattern_l[0] == "*" or pattern_l[0] == "**") and len(pattern_l) == 1:
+        return True
+    elif pattern_l[0] == "*":
+        if pattern_l[1] in filename_l[1]:
+            return True
+    elif pattern_l[1] == "*":
+        if pattern_l[0] in filename_l[0]:
+            return True
+    if "?" in pattern and len(pattern) != len(filename):
+        return False
+    else:
+        ch = 0
+        for i in range(len(pattern)):
+            if pattern[i] == filename[i] or pattern[i] == "?":
+                ch += 1
+        if ch == len(pattern):
+            return True
+        else:
+            return False
 
 
 if __name__ == '__main__':
     print("Example:")
-    print(unix_match('somefile.txt', '*'))
-    
+    print(unix_match('somefile.txt', '*z*'))
+
     # These "asserts" are used for self-checking and not for an auto-testing
     assert unix_match('somefile.txt', '*') == True
     assert unix_match('other.exe', '*') == True

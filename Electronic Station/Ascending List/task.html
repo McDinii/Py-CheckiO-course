@@ -1,14 +1,16 @@
 <h2>Ascending List</h2>
 <!-- Describe task in general -->
 <p>
- Determine whether the sequence of elements items is ascending such that each of its elements is strictly larger than (and not merely equal to) the preceding element.
+ Determine whether the list of elements is ascending such that each of its elements
+    is strictly larger than (and not merely equal to) the preceding element.
+    Empty list consider as ascending.
 </p>
 <!-- Explain input and output values -->
 <p>
  <strong>
   Input:
  </strong>
- Iterable with ints.
+ List with ints.
 </p>
 <p>
  <strong>
@@ -23,15 +25,11 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">
-is_ascending([-5, 10, 99, 123456]) == True
-is_ascending([99]) == True
-is_ascending([4, 5, 6, 7, 3, 7, 9]) == False
-is_ascending([]) == True
-is_ascending([1, 1, 1, 1]) == False
+ <pre class="brush: python">assert is_ascending([-5, 10, 99, 123456]) == True
+assert is_ascending([99]) == True
+assert is_ascending([4, 5, 6, 7, 3, 7, 9]) == False
+assert is_ascending([]) == True
 </pre>
- 
 </div>
 <p>
  <i>
@@ -42,5 +40,5 @@ is_ascending([1, 1, 1, 1]) == False
  </i>
 </p>
 
-
+<p><a href="https://py.checkio.org/mission/ascending-list/publications/category/clear">View solutions</a></p>
 <p><a href="https://py.checkio.org/en/mission/ascending-list">See the task on CheckiO</a></p>

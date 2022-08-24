@@ -26,22 +26,19 @@ files:
 status: Unchecked
 code: |
   def checkio(text: str) -> str:
+      # your code here
+      return ""
 
-      #replace this for solution
-      return 'a'
 
-  if __name__ == '__main__':
-      print("Example:")
-      print(checkio("Hello World!"))
+  print("Example:")
+  print(checkio("Hello World!"))
 
-      #These "asserts" using only for self-checking and not necessary for auto-testing
-      assert checkio("Hello World!") == "l", "Hello test"
-      assert checkio("How do you do?") == "o", "O is most wanted"
-      assert checkio("One") == "e", "All letter only once."
-      assert checkio("Oops!") == "o", "Don't forget about lower case."
-      assert checkio("AAaooo!!!!") == "a", "Only letters."
-      assert checkio("abe") == "a", "The First."
-      print("Start the long test")
-      assert checkio("a" * 9000 + "b" * 1000) == "a", "Long."
-      print("The local tests are done.")
+  assert checkio("Hello World!") == "l"
+  assert checkio("How do you do?") == "o"
+  assert checkio("One") == "e"
+  assert checkio("Oops!") == "o"
+  assert checkio("AAaooo!!!!") == "a"
+  assert checkio("abe") == "a"
+
+  print("The mission is done! Click 'Check Solution' to earn rewards!")
 seconds_from_change: 9223372036854775807

@@ -19,13 +19,13 @@
  <strong>
   Input:
  </strong>
- The secret message.
+ The secret message (string).
 </p>
 <p>
  <strong>
   Output:
  </strong>
- The decrypted text.
+ The decrypted text (string).
 </p>
 <!-- Put some usage examples -->
 <div class="for_info_only">
@@ -34,12 +34,12 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">morse_decoder("... --- -- .   - . -..- -") == "Some text"
-morse_decoder("..--- ----- .---- ---..") == "2018"
-morse_decoder(".. -   .-- .- ...   .-   --. --- --- -..   -.. .- -.--") == "It was a good day"
+ <pre class="brush: python">assert morse_decoder(&quot;... --- -- .   - . -..- -&quot;) == &quot;Some text&quot;
+assert (
+    morse_decoder(&quot;..   .-- .- ...   -... --- .-. -.   .. -.   .---- ----. ----. -----&quot;)
+    == &quot;I was born in 1990&quot;
+)
 </pre>
- 
 </div>
 <!-- Here you can explain how it can be used in development and what is usage of this. -->
 <!-- The section is optional -->

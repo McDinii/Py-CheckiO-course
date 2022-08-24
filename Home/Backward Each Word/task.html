@@ -23,13 +23,11 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">backward_string_by_word('') == ''
-backward_string_by_word('world') == 'dlrow'
-backward_string_by_word('hello world') == 'olleh dlrow'
-backward_string_by_word('hello   world') == 'olleh   dlrow'
+ <pre class="brush: python">assert backward_string_by_word(&quot;&quot;) == &quot;&quot;
+assert backward_string_by_word(&quot;world&quot;) == &quot;dlrow&quot;
+assert backward_string_by_word(&quot;hello world&quot;) == &quot;olleh dlrow&quot;
+assert backward_string_by_word(&quot;hello   world&quot;) == &quot;olleh   dlrow&quot;
 </pre>
- 
 </div>
 <!-- Here you can explain some constraints for input-->
 <!-- The section is optional -->

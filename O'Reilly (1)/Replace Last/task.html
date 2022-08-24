@@ -17,7 +17,7 @@
  <strong>
   Output:
  </strong>
- Iterable.
+ Iterable (tuple, generator, Iterator ...).
 </p>
 <!-- Give some usage examples -->
 <div class="for_info_only">
@@ -26,13 +26,11 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">replace_last([2, 3, 4, 1]) == [1, 2, 3, 4]
-replace_last([1, 2, 3, 4]) == [4, 1, 2, 3]
-replace_last([1]) == [1]
-replace_last([]) == []
+ <pre class="brush: python">assert list(replace_last([2, 3, 4, 1])) == [1, 2, 3, 4]
+assert list(replace_last([1, 2, 3, 4])) == [4, 1, 2, 3]
+assert list(replace_last([1])) == [1]
+assert list(replace_last([])) == []
 </pre>
- 
 </div>
 
 

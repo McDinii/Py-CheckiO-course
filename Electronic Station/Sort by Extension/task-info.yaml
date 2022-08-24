@@ -5,14 +5,41 @@ files:
   text: |
     from typing import List
 
+    def split_(str,sym=""):
+        i = len(str)-1
+        ret=["",""]
+        while i > 0:
+            if str[i] == sym:
+                ret = [str[:i],str[i+1:]]
+                break
+            i-=1
+        if ret[0] == "" or ret[1] == "":
+            return [str,""]
+        else:
+            return ret
     def sort_by_ext(files: List[str]) -> List[str]:
-        # your code here
+        for i in range(len(files)):
+            files[i] = split_(files[i],".")
+            print(files[i])
+        for j in range(len(files)):
+            for i in range(j,len(files)):
+                item = files[j]
+                n_item = files[i]
+                if item[1] > n_item[1] :
+                    files[i], files[j] = files[j], files[i]
+                elif item[1] == n_item[1]:
+                    if item[0] > n_item[0]:
+                        files[i], files[j] = files[j], files[i]
+        for i in range(len(files)):
+            if files[i][1] != '':
+                files[i] = ".".join(files[i])
+            else:
+                files[i] = files[i][0]
         return files
-
 
     if __name__ == '__main__':
         print("Example:")
-        print(sort_by_ext(['1.cad', '1.bat', '1.aa']))
+        print(sort_by_ext(['1.cad', '1.bat', '1.aa', '1.aa.doc']))
 
         # These "asserts" are used for self-checking and not for an auto-testing
         assert sort_by_ext(['1.cad', '1.bat', '1.aa']) == ['1.aa', '1.bat', '1.cad']
@@ -24,18 +51,45 @@ files:
         assert sort_by_ext(['1.cad', '1.bat', '1.aa', '.aa.doc']) == ['1.aa', '1.bat', '1.cad', '.aa.doc']
         print("Coding complete? Click 'Check' to earn cool rewards!")
   learner_created: false
-status: Unchecked
+status: Solved
 code: |
   from typing import List
 
+  def split_(str,sym=""):
+      i = len(str)-1
+      ret=["",""]
+      while i > 0:
+          if str[i] == sym:
+              ret = [str[:i],str[i+1:]]
+              break
+          i-=1
+      if ret[0] == "" or ret[1] == "":
+          return [str,""]
+      else:
+          return ret
   def sort_by_ext(files: List[str]) -> List[str]:
-      # your code here
+      for i in range(len(files)):
+          files[i] = split_(files[i],".")
+          print(files[i])
+      for j in range(len(files)):
+          for i in range(j,len(files)):
+              item = files[j]
+              n_item = files[i]
+              if item[1] > n_item[1] :
+                  files[i], files[j] = files[j], files[i]
+              elif item[1] == n_item[1]:
+                  if item[0] > n_item[0]:
+                      files[i], files[j] = files[j], files[i]
+      for i in range(len(files)):
+          if files[i][1] != '':
+              files[i] = ".".join(files[i])
+          else:
+              files[i] = files[i][0]
       return files
-
 
   if __name__ == '__main__':
       print("Example:")
-      print(sort_by_ext(['1.cad', '1.bat', '1.aa']))
+      print(sort_by_ext(['1.cad', '1.bat', '1.aa', '1.aa.doc']))
 
       # These "asserts" are used for self-checking and not for an auto-testing
       assert sort_by_ext(['1.cad', '1.bat', '1.aa']) == ['1.aa', '1.bat', '1.cad']
@@ -46,4 +100,4 @@ code: |
       assert sort_by_ext(['1.cad', '1.bat', '1.aa', '1.aa.doc']) == ['1.aa', '1.bat', '1.cad', '1.aa.doc']
       assert sort_by_ext(['1.cad', '1.bat', '1.aa', '.aa.doc']) == ['1.aa', '1.bat', '1.cad', '.aa.doc']
       print("Coding complete? Click 'Check' to earn cool rewards!")
-seconds_from_change: 9223372036854775807
+seconds_from_change: 3844981

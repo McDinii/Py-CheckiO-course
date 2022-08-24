@@ -14,7 +14,7 @@
  <strong>
   Output:
  </strong>
- An iterable of strings.
+ A list or another Iterable of strings.
 </p>
 <!-- Give some usage examples -->
 <div class="for_info_only">
@@ -23,11 +23,11 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">split_pairs('abcd') == ['ab', 'cd']
-split_pairs('abc') == ['ab', 'c_']
+ <pre class="brush: python">assert list(split_pairs(&quot;abcd&quot;)) == [&quot;ab&quot;, &quot;cd&quot;]
+assert list(split_pairs(&quot;abc&quot;)) == [&quot;ab&quot;, &quot;c_&quot;]
+assert list(split_pairs(&quot;abcdf&quot;)) == [&quot;ab&quot;, &quot;cd&quot;, &quot;f_&quot;]
+assert list(split_pairs(&quot;a&quot;)) == [&quot;a_&quot;]
 </pre>
- 
 </div>
 <!-- Here you can explain some constraints for input-->
 <!-- The section is optional -->
@@ -36,7 +36,7 @@ split_pairs('abc') == ['ab', 'c_']
   Precondition:
  </strong>
  <i>
-  0&lt;=len(str)&lt;=100
+  0 &lt;= len(text) &lt;= 100
  </i>
 </p>
 

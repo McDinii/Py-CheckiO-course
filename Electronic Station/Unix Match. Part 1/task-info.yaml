@@ -2,24 +2,80 @@ type: checkiO
 files:
 - name: mission.py
   visible: true
-  text: "def unix_match(filename: str, pattern: str) -> bool:\n\n    # your code here\n\
-    \    return filename == pattern\n\n\nif __name__ == '__main__':\n    print(\"\
-    Example:\")\n    print(unix_match('somefile.txt', '*'))\n    \n    # These \"\
-    asserts\" are used for self-checking and not for an auto-testing\n    assert unix_match('somefile.txt',\
-    \ '*') == True\n    assert unix_match('other.exe', '*') == True\n    assert unix_match('my.exe',\
-    \ '*.txt') == False\n    assert unix_match('log1.txt', 'log?.txt') == True\n \
-    \   assert unix_match('log12.txt', 'log?.txt') == False\n    assert unix_match('log12.txt',\
-    \ 'log??.txt') == True\n    print(\"Coding complete? Click 'Check' to earn cool\
-    \ rewards!\")\n"
+  text: |
+    def unix_match(filename: str, pattern: str) -> bool:
+        pattern_l = pattern.split(".")
+        filename_l = filename.split(".")
+        if (pattern_l[0] == "*" or pattern_l[0] == "**" ) and len(pattern_l) == 1:
+            return True
+        elif pattern_l[0] == "*":
+            if pattern_l[1] in filename_l[1]:
+                return True
+        elif pattern_l[1] == "*":
+            if pattern_l[0] in filename_l[0]:
+                return True
+        if "?" in pattern and len(pattern) != len(filename):
+            return False
+        else:
+            ch = 0
+            for i in range(len(pattern)):
+                if pattern[i] == filename[i] or pattern[i] == "?":
+                    ch += 1
+            if ch == len(pattern):
+                return True
+            else:
+                return False
+
+
+    if __name__ == '__main__':
+        print("Example:")
+        print(unix_match('somefile.txt', '**'))
+
+        # These "asserts" are used for self-checking and not for an auto-testing
+        assert unix_match('somefile.txt', '*') == True
+        assert unix_match('other.exe', '*') == True
+        assert unix_match('my.exe', '*.txt') == False
+        assert unix_match('log1.txt', 'log?.txt') == True
+        assert unix_match('log12.txt', 'log?.txt') == False
+        assert unix_match('log12.txt', 'log??.txt') == True
+        print("Coding complete? Click 'Check' to earn cool rewards!")
   learner_created: false
 status: Unchecked
-code: "def unix_match(filename: str, pattern: str) -> bool:\n\n    # your code here\n\
-  \    return filename == pattern\n\n\nif __name__ == '__main__':\n    print(\"Example:\"\
-  )\n    print(unix_match('somefile.txt', '*'))\n    \n    # These \"asserts\" are\
-  \ used for self-checking and not for an auto-testing\n    assert unix_match('somefile.txt',\
-  \ '*') == True\n    assert unix_match('other.exe', '*') == True\n    assert unix_match('my.exe',\
-  \ '*.txt') == False\n    assert unix_match('log1.txt', 'log?.txt') == True\n   \
-  \ assert unix_match('log12.txt', 'log?.txt') == False\n    assert unix_match('log12.txt',\
-  \ 'log??.txt') == True\n    print(\"Coding complete? Click 'Check' to earn cool\
-  \ rewards!\")\n"
-seconds_from_change: 9223372036854775807
+code: |
+  def unix_match(filename: str, pattern: str) -> bool:
+      pattern_l = pattern.split(".")
+      filename_l = filename.split(".")
+      if (pattern_l[0] == "*" or pattern_l[0] == "**" ) and len(pattern_l) == 1:
+          return True
+      elif pattern_l[0] == "*":
+          if pattern_l[1] in filename_l[1]:
+              return True
+      elif pattern_l[1] == "*":
+          if pattern_l[0] in filename_l[0]:
+              return True
+      if "?" in pattern and len(pattern) != len(filename):
+          return False
+      else:
+          ch = 0
+          for i in range(len(pattern)):
+              if pattern[i] == filename[i] or pattern[i] == "?":
+                  ch += 1
+          if ch == len(pattern):
+              return True
+          else:
+              return False
+
+
+  if __name__ == '__main__':
+      print("Example:")
+      print(unix_match('somefile.txt', '**'))
+
+      # These "asserts" are used for self-checking and not for an auto-testing
+      assert unix_match('somefile.txt', '*') == True
+      assert unix_match('other.exe', '*') == True
+      assert unix_match('my.exe', '*.txt') == False
+      assert unix_match('log1.txt', 'log?.txt') == True
+      assert unix_match('log12.txt', 'log?.txt') == False
+      assert unix_match('log12.txt', 'log??.txt') == True
+      print("Coding complete? Click 'Check' to earn cool rewards!")
+seconds_from_change: 81121
