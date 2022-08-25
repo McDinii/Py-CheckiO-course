@@ -29,13 +29,10 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">checkio('hello,world', 'hello,earth') == 'hello'
-checkio('one,two,three', 'four,five,six') == ''
-checkio('one,two,three',
- 'four,five,one,two,six,three') == 'one,three,two'
+ <pre class="brush: python">assert checkio(&quot;hello,world&quot;, &quot;hello,earth&quot;) == &quot;hello&quot;
+assert checkio(&quot;one,two,three&quot;, &quot;four,five,six&quot;) == &quot;&quot;
+assert checkio(&quot;one,two,three&quot;, &quot;four,five,one,two,six,three&quot;) == &quot;one,three,two&quot;
 </pre>
- 
 </div>
 <p class="for_info_only">
  <strong>
@@ -56,5 +53,5 @@ checkio('one,two,three',
  All words consist of lowercase latin letters.
 </p>
 
-
+<p><a href="https://py.checkio.org/mission/common-words/publications/category/clear">View solutions</a></p>
 <p><a href="https://py.checkio.org/en/mission/common-words">See the task on CheckiO</a></p>

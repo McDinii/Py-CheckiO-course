@@ -4,13 +4,24 @@ files:
   visible: true
   text: |
     def translate(text: str) -> str:
-        # your code here
-        return None
+        ans = ""
+        i=0
+        while i<len(text):
+            ans +=text[i]
+            a = text[i]
+
+            if text[i] in "eyuioa":
+                i +=3
+            elif text[i] == " ":
+                i+=1
+            else:
+                i+=2
+        return ans
 
 
     if __name__ == "__main__":
         print("Example:")
-        print(translate("hieeelalaooo"))
+        print(translate("yyyooouuu duoooiiine"))
 
         # These "asserts" are used for self-checking and not for an auto-testing
         assert translate("hieeelalaooo") == "hello"
@@ -19,16 +30,27 @@ files:
         assert translate("sooooso aaaaaaaaa") == "sos aaa"
         print("Coding complete? Click 'Check' to earn cool rewards!")
   learner_created: false
-status: Unchecked
+status: Solved
 code: |
   def translate(text: str) -> str:
-      # your code here
-      return None
+      ans = ""
+      i=0
+      while i<len(text):
+          ans +=text[i]
+          a = text[i]
+
+          if text[i] in "eyuioa":
+              i +=3
+          elif text[i] == " ":
+              i+=1
+          else:
+              i+=2
+      return ans
 
 
   if __name__ == "__main__":
       print("Example:")
-      print(translate("hieeelalaooo"))
+      print(translate("yyyooouuu duoooiiine"))
 
       # These "asserts" are used for self-checking and not for an auto-testing
       assert translate("hieeelalaooo") == "hello"
@@ -36,4 +58,4 @@ code: |
       assert translate("aaa bo cy da eee fe") == "a b c d e f"
       assert translate("sooooso aaaaaaaaa") == "sos aaa"
       print("Coding complete? Click 'Check' to earn cool rewards!")
-seconds_from_change: 9223372036854775807
+seconds_from_change: 64470

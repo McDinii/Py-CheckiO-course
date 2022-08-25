@@ -1,11 +1,17 @@
 def check_pangram(text):
-    '''
-        is the given text is a pangram.
-    '''
-    # your code here
-    return True or False
+    text = text.lower()
+    letters = list("qwertyuiopasdfghjklzxcvbnm")
+    for i in text:
+        if i in letters:
+            letters.remove(i)
+    if len(letters) == 0:
+        return True
+    else:
+        return False
+
 
 if __name__ == '__main__':
+    print(check_pangram("The quick brown fox jumps over the lazy dog."))
     # These "asserts" using only for self-checking and not necessary for auto-testing
     assert check_pangram("The quick brown fox jumps over the lazy dog."), "brown fox"
     assert not check_pangram("ABCDEF"), "ABC"

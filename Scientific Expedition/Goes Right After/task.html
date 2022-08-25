@@ -11,16 +11,16 @@
   If more than one symbol is in the list you should always count the first one
  </li>
  <li>
-  one of the symbols are not in the given word - your function should return False;
+  One of the symbols are not in the given word - your function should return False;
  </li>
  <li>
-  any symbol appears in a word more than once - use only the first one;
+  Any symbol appears in a word more than once - use only the first one;
  </li>
  <li>
-  two symbols are the same - your function should return False;
+  Two symbols are the same - your function should return False;
  </li>
  <li>
-  the condition is case sensitive, which means 'a' and 'A' are two different symbols.
+  The condition is case sensitive, which means 'a' and 'A' are two different symbols.
  </li>
 </ul>
 <!-- Explain input and output values -->
@@ -28,7 +28,7 @@
  <strong>
   Input:
  </strong>
- Three arguments. The first one is a given string, second is a symbol that should go first, and the third is a symbold that should go after the first one.
+ Three arguments. The first one is a given string, second is a symbol that should go first, and the third is a symbol that should go after the first one.
 </p>
 <p>
  <strong>
@@ -43,18 +43,12 @@
    Example:
   </strong>
  </p>
- 
- <pre class="brush: python">goes_after('world', 'w', 'o') == True
-goes_after('world', 'w', 'r') == False
-goes_after('world', 'l', 'o') == False
-goes_after('panorama', 'a', 'n') == True
-goes_after('list', 'l', 'o') == False
-goes_after('', 'l', 'o') == False
-goes_after('list', 'l', 'l') == False
-goes_after('world', 'd', 'w') == False
+ <pre class="brush: python">assert goes_after(&quot;world&quot;, &quot;w&quot;, &quot;o&quot;) == True
+assert goes_after(&quot;world&quot;, &quot;w&quot;, &quot;r&quot;) == False
+assert goes_after(&quot;world&quot;, &quot;l&quot;, &quot;o&quot;) == False
+assert goes_after(&quot;panorama&quot;, &quot;a&quot;, &quot;n&quot;) == True
 </pre>
- 
 </div>
 
-
+<p><a href="https://py.checkio.org/mission/goes-after/publications/category/clear">View solutions</a></p>
 <p><a href="https://py.checkio.org/en/mission/goes-after">See the task on CheckiO</a></p>

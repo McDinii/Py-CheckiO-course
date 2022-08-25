@@ -1,8 +1,18 @@
 from typing import Tuple
 
 def follow(instructions: str) -> Tuple[int, int]:
-    # your code here
-    return (0, 0)
+    x = 0
+    y = 0
+    for i in instructions:
+        if i == 'f':
+            y+=1
+        elif i == 'b':
+            y-=1
+        elif i == "l":
+            x-=1
+        elif i == "r":
+            x+=1
+    return x,y
 
 
 if __name__ == '__main__':

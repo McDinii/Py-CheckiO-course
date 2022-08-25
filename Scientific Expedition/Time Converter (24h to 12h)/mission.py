@@ -1,5 +1,15 @@
 def time_converter(time):
-    #replace this for solution
+    time = time.split(":")
+    if int(time[0]) < 12 or int(time[0])==00:
+        if int(time[0])==00:
+            time = "12" + ":" + time[1] + " a.m."
+        else:
+            time = str(int(time[0])) + ":"+time[1] + " a.m."
+    else:
+        if time[0] != "12":
+            time = str(int(time[0])-12) +":"+ time[1] +" p.m."
+        else:
+            time = time[0] +":"+ time[1]+ " p.m."
     return time
 
 if __name__ == '__main__':
