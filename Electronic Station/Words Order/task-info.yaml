@@ -72,4 +72,4 @@ code: |
       assert words_order("hi world im here", ["wo", "rld"]) == False
       assert words_order("", ["world", "here"]) == False
       print("Coding complete? Click 'Check' to earn cool rewards!")
-seconds_from_change: 3949522
+seconds_from_change: 3959086

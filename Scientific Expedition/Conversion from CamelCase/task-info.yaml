@@ -4,8 +4,13 @@ files:
   visible: true
   text: |+
     def from_camel_case(name: str) -> str:
-        #replace this for solution
-        return name
+        name = list(name)
+        for i in range(len(name)):
+            if name[i] in "QWERTYUIOPASDFGHJKLZXCVBNM":
+                name[i] = name[i].lower()
+                if i != 0:
+                    name[i-1] += "_"
+        return "".join(name)
 
     if __name__ == '__main__':
         print("Example:")
@@ -19,11 +24,16 @@ files:
         print("Coding complete? Click 'Check' to earn cool rewards!")
 
   learner_created: false
-status: Unchecked
+status: Solved
 code: |+
   def from_camel_case(name: str) -> str:
-      #replace this for solution
-      return name
+      name = list(name)
+      for i in range(len(name)):
+          if name[i] in "QWERTYUIOPASDFGHJKLZXCVBNM":
+              name[i] = name[i].lower()
+              if i != 0:
+                  name[i-1] += "_"
+      return "".join(name)
 
   if __name__ == '__main__':
       print("Example:")
@@ -36,4 +46,4 @@ code: |+
       assert from_camel_case("Name") == "name"
       print("Coding complete? Click 'Check' to earn cool rewards!")
 
-seconds_from_change: 9223372036854775807
+seconds_from_change: 1

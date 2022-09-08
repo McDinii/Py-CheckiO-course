@@ -22,7 +22,10 @@ files:
     And burbled as it came!""", "noir") == [4, 16, 7, 16]
     print("Coding complete? Click 'Check' to earn cool rewards!")
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: Tests failed
+  time: Thu, 25 Aug 2022 18:00:29 UTC
 code: |
   def checkio(text, word):
       return [1, 1, 1, 4]

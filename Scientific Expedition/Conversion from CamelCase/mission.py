@@ -1,6 +1,11 @@
 def from_camel_case(name: str) -> str:
-    #replace this for solution
-    return name
+    name = list(name)
+    for i in range(len(name)):
+        if name[i] in "QWERTYUIOPASDFGHJKLZXCVBNM":
+            name[i] = name[i].lower()
+            if i != 0:
+                name[i-1] += "_"
+    return "".join(name)
 
 if __name__ == '__main__':
     print("Example:")
